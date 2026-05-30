@@ -12,7 +12,7 @@ pd_iris.dropna(inplace=True)
 pd_iris.drop_duplicates(inplace=True)  
 
 # calculate the summary statistics
-pd_iris[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']].agg(['mean', 'median', 'mode'])
+pd_iris[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']].agg(['mean', 'median', 'std'])
 pd_iris[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']].mode()
 
 # visualizations 
