@@ -18,14 +18,31 @@ iris_mode = stats.mode(pd_iris)
 iris_std = np.std(pd_iris)
 
 # visualizations 
-#histogram of sepal length
-plt.hist(pd_iris['sepal_length'], bins=20, color='blue', alpha=0.7)
-#boxplot of sepal width
-sns.boxplot(data=pd_iris, y='sepal_width')
-#scatter plot
-pd_iris.plot(x='petal_length', y='petal_width', kind='scatter')
+#histograms of sepal length and width
+sns.histplot(pd_iris['sepal_length'])
+sns.histplot(pd_iris['sepal_width'])
+
+#histograms of petal length and width
+sns.histplot(pd_iris['petal_length'])
+sns.histplot(pd_iris['petal_width'])
+
+#boxplots of sepal length and width by species
+sns.boxplot(x='species', y='sepal_length', data=pd_iris)
+sns.boxplot(x='species', y='sepal_width', data=pd_iris)
+
+#boxplots of petal length and width by species
+sns.boxplot(x='species', y='petal_length', data=pd_iris)
+sns.boxplot(x='species', y='petal_width', data=pd_iris)
+
+#scatter plots of sepal length and width by species
+sns.scatterplot(x='sepal_length', y='sepal_width', hue='species', data=pd_iris)
+#scatter plots of petal length and width by species
+sns.scatterplot(x='petal_length', y='petal_width', hue='species', data=pd_iris)
+
 plt.show()
 
 #finding correlations between numerical features
+#correlation between sepal length and width
 print(pd_iris['sepal_width'].corr(pd_iris['sepal_length']))
+#correlation between petal length and width
 print(pd_iris['petal_length'].corr(pd_iris['petal_width']))
