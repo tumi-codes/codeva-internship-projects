@@ -1,11 +1,9 @@
 import pandas as pd
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from scipy import stats
 
 
-pd_iris = pd.read_csv("../Data Set For Task/1) iris.csv")
+pd_iris = pd.read_csv("Data Set For Task/1) iris.csv")
 
 # cleaning the dataset
 pd_iris.dropna(inplace=True)  

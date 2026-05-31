@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-pd_iris = pd.read_csv('../Data Set For Task/iris.csv')
+pd_iris = pd.read_csv('Data Set For Task/1) iris.csv')
 
 # cleaning the dataset
 pd_iris.dropna(inplace=True)  
