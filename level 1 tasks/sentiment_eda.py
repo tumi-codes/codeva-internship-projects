@@ -16,22 +16,18 @@ print(pd_sentiment[['Likes', 'Retweets']].mode())
 #BOXPLOTS
 fig, ax = plt.subplots(1, 2, figsize=(12, 10))
 #Likes by sentiment
-sns.boxplot(data=pd_sentiment, x='Likes', ax=ax[0])
+sns.boxplot(data=pd_sentiment, x='Sentiment', y='Likes', ax=ax[0])
 #retweets by sentiments
-sns.boxplot(data=pd_sentiment, x='Retweets', ax=ax[1])
+sns.boxplot(data=pd_sentiment, x='Sentiment', y='Retweets', ax=ax[1])
 plt.tight_layout()
 plt.show()
 
 #barplots
-fig, ax = plt.subplots(2, 2, figsize=(12, 10))
-#sentiment count
-sns.barplot(data=pd_sentiment, x='Sentiment', ax=ax[0, 0])
-#posts per platform
-sns.barplot(data=pd_sentiment, x='Platform', ax=ax[0,1])
-#posts per country
-sns.barplot(data=pd_sentiment, x='Country', ax=ax[1, 0])
-#average likes per sentiment
-sns.barplot(data=pd_sentiment, x='Sentiment', y='Likes', ax=ax[1, 1])
+fig, ax = plt.subplots(1, 2, figsize=(12, 10))
+
+#engagement per platform
+sns.barplot(x='Platform', y='Likes', data=pd_sentiment, ax=ax[0])
+sns.barplot(x='Platform', y='Retweets', data=pd_sentiment, ax=ax[1])
 
 plt.tight_layout()
 plt.show()
