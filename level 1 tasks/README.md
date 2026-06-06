@@ -1,4 +1,4 @@
-Iris Dataset Exploratory Data Analysis (EDA) and Data Visualization
+Dataset Exploratory Data Analysis (EDA) and Data Visualization
 
 Project Overview
 
@@ -41,30 +41,16 @@ The following statistical analyses were conducted:
 
 ### Bar Charts
 
-Bar plots were used to compare average measurements across different iris species:
-
-* Mean Sepal Length by Species
-* Mean Sepal Width by Species
-* Mean Petal Length by Species
-* Mean Petal Width by Species
+Bar plots were used to compare average measurements across different features
 
 ### Scatter Plots
 
-Scatter plots were used to examine relationships between features and identify clustering among species:
-
-* Sepal Length vs Sepal Width
-* Petal Length vs Petal Width
+Scatter plots were used to examine relationships between features
 
 ### Subplots
 
 Related visualizations were grouped using Matplotlib subplots to improve readability and comparison.
 
-## Key Insights
-
-* Petal measurements provide clearer separation between species than sepal measurements.
-* Iris Setosa is distinctly different from the other species in petal dimensions.
-* Iris Versicolor and Iris Virginica exhibit some overlap but remain distinguishable through petal features.
-* No significant missing or duplicate records remained after cleaning.
 
 ## Challenges Encountered
 
