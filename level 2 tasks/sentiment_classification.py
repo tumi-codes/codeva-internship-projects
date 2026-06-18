@@ -44,4 +44,23 @@ def plot(df, first, second):
     plt.tight_layout()
     plt.show()
 
-#plot 
+positive_words = ['Positive', 'Happiness', 'Joy', 'Love', 'Excitement', 'Gratitude', 'Hope', 
+                   'Contentment', 'Admiration', 'Amusement', 'Pride', 'Elation', 'Euphoria']
+negative_words = ['Negative', 'Anger', 'Fear', 'Sadness', 'Disgust', 'Grief', 'Loneliness',
+                   'Despair', 'Bitterness', 'Jealousy', 'Regret', 'Shame', 'Frustration']
+
+def bucket_sentiment(s):
+    s = s.strip()
+    if s in positive_words:
+        return 1
+    elif s in negative_words:
+        return -1
+    else:
+        return 0  # neutral / unclear
+
+data['Sentiment_score'] = data['Sentiment'].apply(bucket_sentiment)
+
+# predict likes from sentiment
+plot(data, 'Sentiment_score', 'Likes')
+# predict retweets from sentiment
+plot(data, 'Sentiment_score', 'Retweets')
