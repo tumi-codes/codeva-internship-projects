@@ -56,7 +56,7 @@ def bucket_sentiment(s):
     elif s in negative_words:
         return -1
     else:
-        return 0  # neutral / unclear
+        return 0  
 
 data['Sentiment_score'] = data['Sentiment'].apply(bucket_sentiment)
 
